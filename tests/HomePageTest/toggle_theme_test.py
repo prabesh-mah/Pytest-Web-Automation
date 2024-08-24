@@ -18,7 +18,7 @@ class TestToggleTheme(BaseTest):
 
         def toggle_theme_and_verify(expected_theme):
             toggle_theme.click_more_tools()
-            toggle_theme.toggle_theme()
+            toggle_theme.click_toggle_theme()
             body_classes = toggle_theme.get_attribute(
                 ThemeLocators.body, 'class')
             assert expected_theme in body_classes, f"Expected theme '{

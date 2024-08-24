@@ -20,5 +20,5 @@ class ThemeSection(BasePage):
         except (NoSuchElementException, TimeoutException):
             print(f"FAILED! Element not clickable")
 
-    def toggle_theme(self):
+    def click_toggle_theme(self):
         self.click(ThemeLocators.light_dark_toggle)
