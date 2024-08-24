@@ -38,5 +38,5 @@ class CopyRightLocator:
 
 
 class HomepageLocator:
-    about_nepse_alpha = (By.XPATH, "//h4[text()='About Nepse Alpha']")
+    about_nepse_alpha = (By.XPATH, "//img[@src='/images/logo.jpg']")
     company_logo = (By.XPATH, "//img[@src='/images/logo.jpg']")
