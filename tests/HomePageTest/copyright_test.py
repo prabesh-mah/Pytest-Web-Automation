@@ -15,7 +15,7 @@ class TestCopyright(BaseTest):
         copyright = CopyrightSection(self.driver)
 
         expected_company_name = "Nepse Alpha Pvt Ltd."
-        expected_symbol = "© Copyright"
+        expected_symbol = "©"
 
         company_name_matches = copyright.copyright_company_name_text(
             expected_company_name)
