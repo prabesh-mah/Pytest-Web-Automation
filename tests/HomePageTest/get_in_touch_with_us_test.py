@@ -12,6 +12,7 @@ import time
 class TestGetInTouchWithUs(BaseTest):
 
     @pytest.mark.order(14)
+    @pytest.mark.xfail(reason="only validate with url which might fail as it changes quickly")
     def test_verify_twitter_button_redirects_to_twitter_page(self):
         touch_with_us = GetInTouchWithUsSection(self.driver)
         touch_with_us.move_to_about_nepse_alpha()
