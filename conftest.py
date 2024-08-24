@@ -38,9 +38,9 @@ def browser_call(request):
 
     driver.get(baseURL)
 
-    # Wait until 'header_carousel' news is visible
+    # Wait until 'latest_anouncement' section is visible
     WebDriverWait(driver, 20).until(EC.visibility_of_element_located(
-        (By.XPATH, "//div[@class='caroufredsel_wrapper_vertical_carousel']")))
+        (By.XPATH, "//li[normalize-space()='Latest Announcement']")))
 
     # Passing driver to class level
     request.cls.driver = driver
