@@ -17,6 +17,7 @@ class TestContactUs(BaseTest):
         time.sleep(1)
 
     @pytest.mark.order(25)
+    @pytest.mark.timeout(30)
     @pytest.mark.high_priority
     def test_validate_form_fillup_with_empty_mandatory_details(self):
         self.click_education_and_scroll_to_contact_us()
