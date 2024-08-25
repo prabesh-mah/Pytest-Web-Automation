@@ -35,17 +35,22 @@ class APKDownloadSection(BasePage):
         self.click(APKDownloadLocator.download_icon)
 
     def validate_download(self):
-        # Get the username from environment variables
-        username = os.getenv('USERNAME')
+        try:
+            # Get the username from environment variables
+            username = os.getenv('USERNAME')
+            print(username)
 
-        # Set the download directory using the retrieved username
-        download_directory = fr"C:\Users\Wicked Man\Downloads"
+            # Set the download directory using the retrieved username
+            download_directory = fr"C:\Users\Wicked Man\Downloads"
 
-        file_name = "Nepsealpha_V1.0.1.apk"
+            file_name = "Nepsealpha_V1.0.1.apk"
 
-        file_path = os.path.join(download_directory, file_name)
+            file_path = os.path.join(download_directory, file_name)
 
-        # Assert if the file exists
-        assert os.path.exists(file_path), f"{
-            file_name} not found in the downloads folder."
-        print(f"{file_name} has been successfully downloaded.")
+            # Assert if the file exists
+            assert os.path.exists(file_path), f"{
+                file_name} not found in the downloads folder."
+            print(f"{file_name} has been successfully downloaded.")
+
+        except FileNotFoundError:
+            pass
