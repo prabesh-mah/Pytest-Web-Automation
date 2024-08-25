@@ -1,14 +1,11 @@
-import time
-import pytest
 from selenium import webdriver
 from utilities import ReadConfig
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.common.exceptions import NoSuchFrameException, TimeoutException, NoSuchElementException
+import pytest
+import time
 
 
 @pytest.fixture(scope="function")
@@ -18,32 +15,41 @@ def browser_call(request):
     baseURL = ReadConfig.read_configuration("config file", "base_url")
     browserType = ReadConfig.read_configuration("config file", "browser_type")
 
+    browser_options = uc.ChromeOptions()
+    extension_paths = [
+        "extensions/Buster",
+        "extensions/uBlock Origin"
+    ]
+    browser_options.add_argument(
+        f"--load-extension={','.join(extension_paths)}")
+    browser_options.add_argument(
+        "--disable-blink-features=AutomationControlled")
+
     # Initialize Webdriver
     driver = None
 
     try:
         if browserType == "chrome":
-            driver = uc.Chrome()
+            driver = uc.Chrome(options=browser_options)
         elif browserType == "firefox":
-            driver = webdriver.Firefox()
+            driver = webdriver.Firefox(options=browser_options)
         elif browserType == "edge":
-            driver = webdriver.Edge()
+            driver = webdriver.Edge(options=browser_options)
         else:
             pytest.skip("Unsupported browser!")
 
     except Exception as e:
         print(f"Error occurred while launching the browser: {str(e)}")
 
-    driver.maximize_window()
+    else:
+        # Maximize window and open the base URL
+        driver.maximize_window()
+        driver.get(baseURL)
+        assert "nepsealpha" in driver.current_url
 
-    driver.get(baseURL)
+        # Sharing WebDriver instance across all test methods in a class
+        request.cls.driver = driver
 
-    # Wait until 'latest_anouncement' section is visible
-    WebDriverWait(driver, 20).until(EC.visibility_of_element_located(
-        (By.XPATH, "//li[normalize-space()='Latest Announcement']")))
-
-    # Passing driver to class level
-    request.cls.driver = driver
-
-    yield driver
-    driver.close()
+    finally:
+        yield driver
+        driver.close()
