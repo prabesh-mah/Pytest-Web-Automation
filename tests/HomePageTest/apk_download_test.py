@@ -25,7 +25,7 @@ class TestAPKDownloadRedirection(BaseTest):
             self.driver.window_handles[2])  # switch download tab | 2
         apk_download.apk_download_element_presence_on_download_page()
         apk_download.click_download_button()
-        time.sleep(10)
+        time.sleep(18)
 
         # Close all other tabs except main
         for handle in self.driver.window_handles:
