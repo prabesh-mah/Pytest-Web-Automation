@@ -96,9 +96,6 @@ pytest -m medium_priority
 pytest -m high_priority 
 ```
 
-## Video of Smoke Test
-[Watch the video](https://drive.proton.me/urls/03A3XZSAA4#XQIZbfINk3Pd)
-
 **# 2**: To run all test methods and generate an `HTML report`.
 
 ```
@@ -109,3 +106,6 @@ where,
 - `-v` : verbose, provide more detailed output.
 - `-s`: stdout, allow print statement to be displayed.
 - `--html='report.html'`: This option generate an HTML report with file name report.html.
+
+## Video
+[Watch the video](https://drive.proton.me/urls/82HTY4XF5R#vRnv8rS7NldW)
