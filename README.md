@@ -3,7 +3,7 @@
 
 # Web Automation 
 
-This project is about web automation on [Nepse Alpha](https://www.nepsealpha.com/) using `Python Selenium Webdriver` with `POM` design pattern and `Pytest` Framework with `HTML` reporting. 
+I automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python with Selenium WebDriver`, employing the `Page Object Model (POM)` design pattern for better maintainability and scalability. I utilized the `pytest` framework for testing, which allowed me to efficiently run tests and generate detailed HTML reports. Additionally, I incorporated various `pytest plugins`, such as `pytest-order` for controlling test execution order and `pytest-timeout` to manage test execution time. I also implemented `custom markers`, including `smoke`, `regression`, `high_priority`, `medium_priority`, and `low_priority`, to categorize and prioritize tests effectively.
 
 ## Requirements
 
@@ -15,6 +15,7 @@ This project is about web automation on [Nepse Alpha](https://www.nepsealpha.com
 - [pytest](https://pypi.org/project/pytest/)
 - [pytest-order](https://pypi.org/project/pytest-order/)
 - [pytest-timeout](https://pypi.org/project/pytest-timeout/)
+- [pandas](https://pypi.org/project/pandas/)
 
 ## Requirements Explaination in Brief: 
 - `undetected-chromedriver` : This package is an optimized Selenium Chromedriver patch that does not trigger anti-bot services. It’s designed to not be detected by services like CloudFlare, Imperva, hCaptcha, and others.
@@ -24,21 +25,20 @@ This project is about web automation on [Nepse Alpha](https://www.nepsealpha.com
 
 ## What are tested in this project
 
+- HTML Table Scraping
+- File Download
+- Tabs 
+- Search functionality 
+- Facebook Embed
 - Toggle between dark and light theme
 - About Nepse Alpha section
 - Advertise with us section
-- Search functionality 
-- Facebook Embed
-- Page Redirection
-- Form fill up
-- Tabs
+- Form fillup
 - etc
 
 ## How To Setup This Project
 
-To setup this project on your PC, download this project as a Zip file via. GitHub link or use `git clone`, below are the detailed steps:
-
-**Step 1**: Use below command to ensure that all requirements have been installed.
+**Step 1**: Use the command below to ensure that all softwares have been installed.
 
 ```
 python --version
@@ -60,7 +60,7 @@ git clone https://github.com/prabesh-mah/Pytest-Web-Automation
 
 **Step 4**: Once the project has been cloned, open the project using `Visual Studio Code` or any other IDE.
 
-**Step 5**: Run the following command in the terminal to install the virtual environment, allowing us to install the essential libraries on the virtual environment (Optional). 
+**Step 5**: Run the following command in the terminal to install the virtual environment, to install the essential libraries in an isolated environment. 
 
 ```
 pip install virtualenv
@@ -72,12 +72,10 @@ pip install virtualenv
 virtualenv venv
 ```
 
-**Step 7**: Below are the commands to activate & deactivate the `Virtual Environment`.
+**Step 7**: Commands to activate & deactivate the `Virtual Environment`.
 
 ```
 venv\Scripts\activate
-``` 
-```
 deactivate
 ```
 
@@ -89,20 +87,23 @@ pip install -r requirements.txt
 
 ## Usage
 
-**# 1**: To run tests in pytest based on `custom markers`, you can use the `-m` option followed by the marker name. Here are examples for running tests with the `smoke` and `high_priority markers`:
+**# 1**: To run tests in pytest based on `custom markers`, you can use the `-m` option followed by the marker name. Below are the commands and markers used for this project.
 ```
 pytest -m smoke 
-```
-```
+pytest -m regression
+pytest -m low_priority 
+pytest -m medium_priority 
 pytest -m high_priority 
 ```
-## Screenshot of HTML report
-<img src="screenshot\Smoke-Test-Report.png" alt="HTML report" style="max-width:100%">
+
+## Screenshot of Smoke Test HTML report
+<img src="screenshot\HTML-Report.png" alt="HTML report" style="max-width:100%">
+
 
 ## Video of Smoke Test
 [Watch the video](https://drive.proton.me/urls/03A3XZSAA4#XQIZbfINk3Pd)
 
-**# 2**: To run all test methods and generate an `HTML report` simultaneously, you can use the following command:
+**# 2**: To run all test methods and generate an `HTML report`.
 
 ```
 pytest -vs --html='report.html' 
@@ -112,10 +113,3 @@ where,
 - `-v` : verbose, provide more detailed output.
 - `-s`: stdout, allow print statement to be displayed.
 - `--html='report.html'`: This option generate an HTML report with file name report.html.
-
-## Screenshot of HTML report
-<img src="screenshot\HTML-Report.png" alt="HTML report" style="max-width:100%">
-
-## Video of all test
-[Watch the video](https://drive.proton.me/urls/7HRV0R3X6W#1qGjl68TqliG)
-
