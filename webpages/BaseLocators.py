@@ -38,7 +38,10 @@ class CopyRightLocator:
 
 
 class HomepageLocator:
-    about_nepse_alpha = (By.XPATH, "//img[@src='/images/logo.jpg']")
+    about_nepse_alpha = (
+        By.XPATH, "//h4[normalize-space()='About Nepse Alpha']")
     company_logo = (By.XPATH, "//img[@src='/images/logo.jpg']")
     nepse_alpha_fb_page = (
         By.XPATH, "//h4[normalize-space()='Nepse Alpha Facebook Page']")
+    latest_anouncement_header = (
+        By.XPATH, "//li[normalize-space()='Latest Announcement']")
