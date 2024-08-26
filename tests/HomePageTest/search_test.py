@@ -59,7 +59,7 @@ class TestSearchBox(BaseTest):
         search_box = SearchBox(self.driver)
         to_search = 'N$1#'
         search_box.enter_search_term(to_search)
-        search_box.click_search_button()
+        search_box.actions.send_keys(Keys.ENTER).perform()
         search_box.check_404_error_in_new_page()
         time.sleep(1)
 
