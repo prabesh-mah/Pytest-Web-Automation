@@ -96,10 +96,6 @@ pytest -m medium_priority
 pytest -m high_priority 
 ```
 
-## Screenshot of Smoke Test HTML report
-<img src="screenshot\HTML-Report.png" alt="HTML report" style="max-width:100%">
-
-
 ## Video of Smoke Test
 [Watch the video](https://drive.proton.me/urls/03A3XZSAA4#XQIZbfINk3Pd)
 

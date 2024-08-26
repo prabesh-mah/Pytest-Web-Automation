@@ -6,6 +6,7 @@ import time
 
 
 @pytest.mark.regression
+@pytest.mark.high_priority
 class TestContactUs(BaseTest):
 
     def click_education_and_scroll_to_contact_us(self):
@@ -16,7 +17,7 @@ class TestContactUs(BaseTest):
         contact_us.scroll_using_js(900)
         time.sleep(1)
 
-    @pytest.mark.order(25)
+    @pytest.mark.order(26)
     @pytest.mark.timeout(30)
     @pytest.mark.high_priority
     def test_validate_form_fillup_with_empty_mandatory_details(self):
@@ -32,7 +33,7 @@ class TestContactUs(BaseTest):
         contact_us.click_send_message_button()
         contact_us.visibility_of_success_box_for_invalid_case()
 
-    @pytest.mark.order(26)
+    @pytest.mark.order(27)
     @pytest.mark.timeout(50)
     @pytest.mark.high_priority
     def test_validate_form_fillup_with_invalid_email(self):
@@ -48,7 +49,7 @@ class TestContactUs(BaseTest):
         contact_us.click_send_message_button()
         contact_us.visibility_of_success_box_for_invalid_case()
 
-    @pytest.mark.order(27)
+    @pytest.mark.order(28)
     @pytest.mark.timeout(50)
     @pytest.mark.medium_priority
     def test_validate_form_fillup_by_clicking_send_button_multiple_times(self):
@@ -72,7 +73,7 @@ class TestContactUs(BaseTest):
         time.sleep(1)
         contact_us.click_send_message_button()
 
-    @pytest.mark.order(28)
+    @pytest.mark.order(29)
     @pytest.mark.timeout(50)
     @pytest.mark.high_priority
     def test_validate_form_fillup_with_valid_details(self):
@@ -80,7 +81,7 @@ class TestContactUs(BaseTest):
         contact_us = TrainingPage(self.driver)
         contact_us.visibility_of_success_box_for_valid_case()
 
-    @pytest.mark.order(29)
+    @pytest.mark.order(30)
     @pytest.mark.timeout(50)
     @pytest.mark.medium_priority
     def test_validate_reappeaing_of_success_dialog_box(self):

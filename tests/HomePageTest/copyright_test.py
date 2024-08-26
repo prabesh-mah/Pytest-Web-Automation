@@ -7,7 +7,7 @@ import time
 
 @pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.medium_priority
+@pytest.mark.high_priority
 class TestCopyright(BaseTest):
 
     @pytest.mark.order(21)

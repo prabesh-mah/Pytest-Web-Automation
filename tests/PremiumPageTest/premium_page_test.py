@@ -10,7 +10,7 @@ import time
 @pytest.mark.medium_priority
 class TestPremiumPage(BaseTest):
 
-    @pytest.mark.order(22)
+    @pytest.mark.order(23)
     def test_verify_khalti_button_redirects_to_khalti_page(self):
         premium_page = PremiumPage(self.driver)
         premium_page.click_premium()
@@ -20,7 +20,7 @@ class TestPremiumPage(BaseTest):
         assert 'khalti' in premium_page.driver.current_url
         time.sleep(1)
 
-    @pytest.mark.order(23)
+    @pytest.mark.order(24)
     def test_verify_esewa_button_redirects_to_esewa_page(self):
         premium_page = PremiumPage(self.driver)
         premium_page.click_premium()
@@ -30,7 +30,7 @@ class TestPremiumPage(BaseTest):
         assert 'esewa' in self.driver.current_url
         time.sleep(1)
 
-    @pytest.mark.order(24)
+    @pytest.mark.order(25)
     def test_verify_connectips_button_redirects_to_connectips_page(self):
         premium_page = PremiumPage(self.driver)
         premium_page.click_premium()

@@ -8,7 +8,7 @@ import time
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.timeout(30)
-@pytest.mark.medium_priority
+@pytest.mark.high_priority
 class TestPlaystoreRedirection(BaseTest):
 
     @pytest.mark.order(18)

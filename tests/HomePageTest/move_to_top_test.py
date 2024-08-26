@@ -8,7 +8,7 @@ import time
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.timeout(20)
-@pytest.mark.low_priority
+@pytest.mark.medium_priority
 class TestMoveToTopButton(BaseTest):
 
     @pytest.mark.order(20)

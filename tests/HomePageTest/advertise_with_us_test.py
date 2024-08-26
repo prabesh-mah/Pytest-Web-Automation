@@ -10,8 +10,9 @@ import time
 @pytest.mark.high_priority
 class TestFooterLinks(BaseTest):
 
-    @pytest.mark.timeout(60)
+
     @pytest.mark.order(17)
+    @pytest.mark.timeout(60)
     def test_verify_address_and_contact_on_homepage(self):
         advertise_with_us = AdvertiseWithUsSection(self.driver)
         main_tab = self.driver.current_window_handle  # save default page

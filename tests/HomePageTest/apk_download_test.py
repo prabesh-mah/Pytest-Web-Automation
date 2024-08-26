@@ -6,6 +6,7 @@ import time
 
 @pytest.mark.smoke
 @pytest.mark.regression
+@pytest.mark.medium_priority
 class TestAPKDownloadRedirection(BaseTest):
 
     @pytest.mark.order(22)
