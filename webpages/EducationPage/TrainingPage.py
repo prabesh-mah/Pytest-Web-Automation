@@ -84,10 +84,10 @@ class TrainingPage(BasePage):
 
         if self.is_text_visible(
                 TrainingLocator.success_box_text, text):
-            print(f"Visible of text is: {visible_text}")
+            print(f"Visible of success box : {visible_text}")
             assert True
         else:
-            print(f"Visible of text is: {visible_text}")
+            print(f"Visible of success box : {visible_text}")
             assert False
 
     def visibility_of_success_box_for_invalid_case(self):
@@ -100,9 +100,10 @@ class TrainingPage(BasePage):
 
         if self.is_text_visible(
                 TrainingLocator.success_box_text, text):
-            print(f"Visible text is: {visible_text}")
+            print(f"Visible of success box : {visible_text}")
             assert False
         else:
+            print(f"Visible of success box : {visible_text}")
             assert True
 
     def click_ok_on_success_box(self):
