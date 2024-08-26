@@ -24,6 +24,7 @@ def browser_call(request):
         f"--load-extension={','.join(extension_paths)}")
     browser_options.add_argument(
         "--disable-blink-features=AutomationControlled")
+    browser_options.add_argument("--disable-extensions")
 
     # Initialize Webdriver
     driver = None
