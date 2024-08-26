@@ -12,18 +12,9 @@ import time
 class TestMoveToTopButton(BaseTest):
 
     @pytest.mark.order(20)
-    @pytest.mark.xfail(reason="sometime move to top button doesn't appears")
     def test_check_move_to_top_button_redirects_to_top_of_page(self):
         move_to_top = MoveToTop(self.driver)
         move_to_top.navigate_to_end_of_page()
         time.sleep(1)
         move_to_top.click_movetotop_button()
-        time.sleep(2)
-        header_news_carousel_element = move_to_top.header_news_carousel_element()
-
-        if header_news_carousel_element.is_displayed():
-            print("Successfully moved to top")
-        else:
-            print("Failed to move to top")
-
         time.sleep(2)

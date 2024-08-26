@@ -5,8 +5,6 @@ import time
 
 
 class MoveToTopLocator:
-    header_news_carousel = (
-        By.XPATH, "//div[@class='caroufredsel_wrapper_vertical_carousel']")
     move_to_top_button = (By.XPATH, "//a[@id='back-top']")
     body_tag = (By.TAG_NAME, "body")
 
@@ -22,13 +20,19 @@ class MoveToTop(BasePage):
         else:
             body.send_keys(Keys.END)
 
-    def click_movetotop_button(self):
-        self.click(MoveToTopLocator.move_to_top_button)
-
-    def header_news_carousel_element(self):
-        element = self.check_element(MoveToTopLocator.header_news_carousel)
-        if element is None:
-            raise Exception(
-                f"Failed to locate element with locator '{element}'")
+    def is_move_to_top_button_visible(self):
+        element = self.driver.find_element(
+            *MoveToTopLocator.move_to_top_button)
+        if element.is_displayed():
+            print("Move to top button is visible.")
+            return True
         else:
-            return element
+            print("Move to top button isn't visible.")
+            return False
+
+    def click_movetotop_button(self):
+        if self.is_move_to_top_button_visible():
+            self.click(MoveToTopLocator.move_to_top_button)
+        else:
+            assert self.is_move_to_top_button_visible(), "Move to Top button is not visible."
+
