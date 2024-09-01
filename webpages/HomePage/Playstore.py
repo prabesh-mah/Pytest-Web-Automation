@@ -18,14 +18,12 @@ class PlaystoreSection(BasePage):
     def visibility_of_error_text_on_playstore(self):
         self.check_element(PlaystoreLocator.error_text)
 
-        text = "We're sorry, the requested URL was not found on this server."
+        expected_text = "We're sorry, the requested URL was not found on this server."
 
-        visible_text = self.is_text_visible(
-            PlaystoreLocator.error_text, text)
+        if self.is_text_visible(PlaystoreLocator.error_text, expected_text):
 
-        if self.is_text_visible(
-                PlaystoreLocator.error_text, text):
-
-            print(f"PASSED! Visibility of text is: {visible_text}")
+            print(f"PASSED! The visibility of text matches the: {
+                  expected_text}")
         else:
-            print(f"FAILED! Visibility of text is: {visible_text}")
+            print(f"FAILED! The visibility of text does not matches the: {
+                  expected_text}")
