@@ -7,11 +7,10 @@ import time
 
 @pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.medium_priority
-@pytest.mark.timeout(60)
 class TestToggleTheme(BaseTest):
 
     @pytest.mark.order(2)
+    @pytest.mark.timeout(60)
     @pytest.mark.high_priority
     def test_toggle_theme_between_light_and_dark_mode(self):
         toggle_theme = ThemeSection(self.driver)

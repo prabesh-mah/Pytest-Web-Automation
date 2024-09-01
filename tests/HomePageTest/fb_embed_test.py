@@ -7,11 +7,11 @@ import time
 
 @pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.timeout(50)
-@pytest.mark.medium_priority
 class TestFacebookEmbed(BaseTest):
 
     @pytest.mark.order(19)
+    @pytest.mark.timeout(50)
+    @pytest.mark.medium_priority
     def test_facebook_embed_visibility_and_interactivity_on_homepage(self):
         fb_embed = FacebookEmbedSection(self.driver)
         main_tab = self.driver.current_window_handle  # save baseurl

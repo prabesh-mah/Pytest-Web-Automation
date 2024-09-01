@@ -12,7 +12,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.timeout(30)
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.high_prority
+    @pytest.mark.high_priority
     def test_verify_visibility_of_search_box(self):
         search_box = SearchBox(self.driver)
         search_box.check_search_box_element()
@@ -21,7 +21,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.order(4)
     @pytest.mark.timeout(60)
     @pytest.mark.regression
-    @pytest.mark.medium_prority
+    @pytest.mark.medium_priority
     def test_verify_search_with_extra_spaces_at_start_and_end(self):
         search_box = SearchBox(self.driver)
         to_search_1 = '          asia'
@@ -41,7 +41,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.order(5)
     @pytest.mark.timeout(40)
     @pytest.mark.regression
-    @pytest.mark.medium_prority
+    @pytest.mark.medium_priority
     def test_verify_search_with_different_datatype(self):
         search_box = SearchBox(self.driver)
         to_search = '11'
@@ -54,7 +54,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.order(6)
     @pytest.mark.timeout(40)
     @pytest.mark.regression
-    @pytest.mark.medium_prority
+    @pytest.mark.medium_priority
     def test_verify_search_with_invalid_keyword(self):
         search_box = SearchBox(self.driver)
         to_search = 'N$1#'
@@ -66,7 +66,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.order(7)
     @pytest.mark.timeout(30)
     @pytest.mark.regression
-    @pytest.mark.medium_prority
+    @pytest.mark.medium_priority
     def test_verify_search_with_empty_keyword(self):
         search_box = SearchBox(self.driver)
         to_search = ''
@@ -78,7 +78,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.order(8)
     @pytest.mark.timeout(30)
     @pytest.mark.regression
-    @pytest.mark.high_prority
+    @pytest.mark.high_priority
     def test_verify_search_with_autosuggestion_functionality(self):
         search_box = SearchBox(self.driver)
         to_search = 'asian'
@@ -89,7 +89,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.order(9)
     @pytest.mark.timeout(30)
     @pytest.mark.regression
-    @pytest.mark.high_prority
+    @pytest.mark.high_priority
     def test_verify_mouse_click_on_autosuggestion_item(self):
         search_box = SearchBox(self.driver)
         to_search = 'n'
@@ -102,7 +102,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.order(10)
     @pytest.mark.timeout(30)
     @pytest.mark.regression
-    @pytest.mark.medium_prority
+    @pytest.mark.medium_priority
     def test_verify_keyboard_navigation_on_autosuggestion_item(self):
         search_box = SearchBox(self.driver)
         to_search = 'n'
@@ -115,7 +115,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.order(11)
     @pytest.mark.timeout(60)
     @pytest.mark.regression
-    @pytest.mark.medium_prority
+    @pytest.mark.medium_priority
     def test_verify_search_with_upper_lower_and_camel_case(self):
         search_box = SearchBox(self.driver)
         to_search_1 = 'asia'
@@ -143,7 +143,7 @@ class TestSearchBox(BaseTest):
     @pytest.mark.timeout(30)
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.high_prority
+    @pytest.mark.high_priority
     def test_search_with_valid_keyword(self):
         search_box = SearchBox(self.driver)
         to_search = 'NEPSE'

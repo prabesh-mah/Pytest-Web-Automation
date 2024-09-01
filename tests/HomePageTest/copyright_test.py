@@ -7,10 +7,11 @@ import time
 
 @pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.high_priority
 class TestCopyright(BaseTest):
 
     @pytest.mark.order(21)
+    @pytest.mark.timeout(30)
+    @pytest.mark.high_priority
     def test_verify_copyright_text_and_symbol(self):
         copyright = CopyrightSection(self.driver)
 

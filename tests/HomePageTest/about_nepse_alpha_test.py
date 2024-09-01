@@ -3,9 +3,9 @@ from webpages.BasePage import BasePage
 from tests.base_test import BaseTest
 import pytest
 
+
 @pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.high_priority
 class TestFooterLinks(BaseTest):
 
     @pytest.mark.order(13)

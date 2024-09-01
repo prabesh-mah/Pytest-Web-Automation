@@ -7,7 +7,7 @@ import time
 
 @pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.timeout(60)
+@pytest.mark.timeout(70)
 @pytest.mark.medium_priority
 class TestGetInTouchWithUs(BaseTest):
 

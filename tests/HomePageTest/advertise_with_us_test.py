@@ -10,7 +10,6 @@ import time
 @pytest.mark.high_priority
 class TestFooterLinks(BaseTest):
 
-
     @pytest.mark.order(17)
     @pytest.mark.timeout(60)
     def test_verify_address_and_contact_on_homepage(self):

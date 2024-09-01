@@ -7,11 +7,11 @@ import time
 
 @pytest.mark.smoke
 @pytest.mark.regression
-@pytest.mark.timeout(30)
-@pytest.mark.high_priority
 class TestPlaystoreRedirection(BaseTest):
 
     @pytest.mark.order(18)
+    @pytest.mark.timeout(30)
+    @pytest.mark.high_priority
     def test_playstore_redirection(self):
         playstore = PlaystoreSection(self.driver)
         main_tab = self.driver.current_window_handle  # save current window
