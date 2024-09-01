@@ -46,7 +46,6 @@ class TestSearchBox(BaseTest):
         search_box = SearchBox(self.driver)
         to_search = '11'
         search_box.enter_search_term(to_search)
-        search_box.len_of_direct_child_element()
         search_box.hover_and_click_LBBD89()
         assert 'LBBLD89' in self.driver.current_url
         time.sleep(1)
