@@ -9,7 +9,7 @@ import time
 
 
 @pytest.fixture(scope="function")
-def browser_call(request):
+def setup_and_teardown(request):
 
     # Read file inside of 'config.ini' from ReadConfig utlity
     baseURL = ReadConfig.read_configuration("config file", "base_url")
@@ -40,33 +40,67 @@ def browser_call(request):
     # Initialize Webdriver
     driver = None
 
-    try:
-        if browserType == "chrome":
-            driver = uc.Chrome(options=chromium_options)
-        elif browserType == "firefox":
-            driver = webdriver.Firefox(options=firefox_options)
-        elif browserType == "edge":
-            driver = webdriver.Edge(options=chromium_options)
-        else:
-            pytest.skip("Unsupported browser!")
-
-    except Exception as e:
-        print(f"Error occurred while launching the browser: {str(e)}")
-
+    if browserType == "chrome":
+        driver = uc.Chrome(options=chromium_options)
+    elif browserType == "firefox":
+        driver = webdriver.Firefox(options=firefox_options)
+    elif browserType == "edge":
+        driver = webdriver.Edge(options=chromium_options)
     else:
-        # Maximize window and open the base URL
-        driver.maximize_window()
-        driver.get(baseURL)
+        pytest.fail(f"Unsupported browser type: '{
+            browserType}'. Supported browsers are: 'chrome', 'firefox', 'edge'.")
 
-        # Wait for a specific element to be visible after the page loads
-        WebDriverWait(driver, 30).until(EC.visibility_of_element_located(
-            (By.XPATH, "//img[@src='/images/logo.jpg']")))
+    # Maximize window and open the base URL
+    driver.maximize_window()
+    driver.get(baseURL)
 
-        assert "nepsealpha" in driver.current_url
+    # Wait for a specific element to be visible after the page loads
+    WebDriverWait(driver, 30).until(EC.visibility_of_element_located(
+        (By.XPATH, "//img[@src='/images/logo.jpg']")))
 
-        # Sharing WebDriver instance across all test methods in a class
-        request.cls.driver = driver
+    assert "nepsealpha" in driver.current_url
 
-    finally:
-        yield driver
-        driver.close()
+    # Sharing WebDriver instance across all test methods in a class
+    request.cls.driver = driver
+
+    yield driver
+    driver.close()
+
+
+'''
+# Enable this for cross browser testing
+@pytest.fixture(params=['chrome', 'edge', 'firefox'])
+def setup_and_teardown(request):
+
+    # Read file inside of 'config.ini' from ReadConfig utlity
+    baseURL = ReadConfig.read_configuration("config file", "base_url")
+    browserType = ReadConfig.read_configuration("config file", "browser_type")
+
+    # Initialize Webdriver
+    driver = None
+
+    if request.param == "chrome":
+        driver = uc.Chrome()
+    elif request.param == "edge":
+        driver = webdriver.Edge()
+    elif request.param == "firefox":
+        driver = webdriver.Firefox()
+    else:
+        pass
+
+    # Maximize window and open the base URL
+    driver.maximize_window()
+    driver.get(baseURL)
+
+    # Wait for a specific element to be visible after the page loads
+    WebDriverWait(driver, 30).until(EC.visibility_of_element_located(
+        (By.XPATH, "//img[@src='/images/logo.jpg']")))
+
+    assert "nepsealpha" in driver.current_url
+
+    # Sharing WebDriver instance across all test methods in a class
+    request.cls.driver = driver
+
+    yield driver
+    driver.close()
+'''
