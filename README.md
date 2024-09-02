@@ -3,7 +3,7 @@
 
 # Project Description 
 
-Automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python with Selenium WebDriver`, implementing the `Page Object Model (POM)` design pattern for enhanced maintainability and scalability. Utilized the `pytest` framework` for testing, enabling efficient test execution and detailed `HTML report` generation. Incorporated various `pytest plugins`, including `pytest-order` for controlling test execution order and `pytest-timeout` for managing test execution time. Implemented `custom markers` such as `smoke`, `regression`, `high_priority`, `medium_priority`, and `low_priority` to effectively categorize and prioritize tests.
+Automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python with Selenium WebDriver`, implementing the `Page Object Model (POM` design pattern for enhanced maintainability and scalability. Utilized the `pytest framework` for testing, enabling efficient test execution and detailed `HTML report` generation. Incorporated various `pytest plugins`, including `pytest-order` for controlling test execution order and `pytest-timeout` for managing test execution time. Implemented `custom markers` such as `smoke`, `regression`, `high_priority`, `medium_priority`, and `low_priority` to effectively categorize and prioritize tests.
 
 # Requirements
 
