@@ -1,11 +1,11 @@
 <img src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*B-994Z0iTjHzgMCu5YhnOg.png" alt="Selenium Logo" style="max-width:100%;">
 
 
-# Web Automation 
+# Project Description 
 
-I automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python with Selenium WebDriver`, employing the `Page Object Model (POM)` design pattern for better maintainability and scalability. I utilized the `pytest` framework for testing, which allowed me to efficiently run tests and generate detailed HTML reports. Additionally, I incorporated various `pytest plugins`, such as `pytest-order` for controlling test execution order and `pytest-timeout` to manage test execution time. I also implemented `custom markers`, including `smoke`, `regression`, `high_priority`, `medium_priority`, and `low_priority`, to categorize and prioritize tests effectively.
+Automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python with Selenium WebDriver`, implementing the `Page Object Model (POM)` design pattern for enhanced maintainability and scalability. Utilized the `pytest` framework` for testing, enabling efficient test execution and detailed `HTML report` generation. Incorporated various `pytest plugins`, including `pytest-order` for controlling test execution order and `pytest-timeout` for managing test execution time. Implemented `custom markers` such as `smoke`, `regression`, `high_priority`, `medium_priority`, and `low_priority` to effectively categorize and prioritize tests.
 
-## Requirements
+# Requirements
 
 - [git](https://git-scm.com/downloads)
 - [python, pip](https://www.python.org/downloads/)
@@ -25,7 +25,7 @@ I automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python
 - `@pytest.mark.smoke` : It is a custom marker used in the pytest framework for Python. 
 - `pandas`: It is used to efficiently scrape HTML tables from web pages and save the extracted data into Excel files using the to_excel() function. 
 
-## What are tested in this project
+# What are tested in this project
 
 - HTML Table Scraping
 - File Download
@@ -38,7 +38,7 @@ I automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python
 - Form fillup
 - etc
 
-## How To Setup This Project
+# How To Setup This Project
 
 **Step 1**: Use the command below to ensure that all softwares have been installed.
 
@@ -83,15 +83,15 @@ venv\Scripts\activate
 deactivate
 ```
 
-**Step 8**: After activating the virtual environment, install the necessary requirements for this project using.
+**Step 8**: After activating the virtual environment, install the necessary requirements for this project.
 
 ```
 pip install -r requirements.txt --upgrade
 ```
 
-## Usage
+# Usage
 
-**# 1**: To run tests in pytest based on `custom markers`, you can use the `-m` option followed by the marker name. Below are the commands and markers that were used for this project.
+**# 1**: To run tests in pytest based on `custom markers`, you can use the `-m` option followed by the marker name. Below are the commands and markers that were used in this project.
 ```
 pytest -m smoke 
 pytest -m regression
@@ -111,18 +111,15 @@ where,
 - `-s`: stdout, allow print statement to be displayed.
 - `--html='report.html'`: This option generate an HTML report with file name report.html.
 
-## Pytest Execution 
+## Full Code Execution Video
 Watch the full code execution video.
-[Watch the Video](https://drive.proton.me/urls/82HTY4XF5R#vRnv8rS7NldW)
+[Here](https://drive.proton.me/urls/82HTY4XF5R#vRnv8rS7NldW)
 
 ## Jenkins Declarative Pipeline
-### Pipeline Explaination in Brief
-- (Stage 1) Clone the `feature` branch from the GitHub repository https://github.com/prabesh-mah/Pytest-Web-Automation.
-- (Stage 2) Creates a virtual environment named venv to isolate project dependencies.
-- (Stage 3) Activates the virtual environment and installs required Python packages from requirements.txt.
-- (Stage 4) Confirms the installation of Python, pip, git, and pytest by checking their versions.
-- (Stage 5) Executes smoke tests using pytest and generates an HTML report saved in jenkins_reports/test_reports.html.
-- (Stage 6) Copies the generated test report to the user's desktop and deletes the original report folder from the Jenkins workspace.
+
+Wrote a `declarative Jenkins pipeline` that automates the process of cloning the `feature branch` from the `GitHub` repository `Pytest-Web-Automation`. The pipeline begins by creating a virtual environment named `venv` to isolate project dependencies, followed by activating the environment and installing the required Python packages from `requirements.txt`. It then confirms the installation of `Python, pip, git, and pytest` by checking their versions. After ensuring that all necessary tools are in place, the pipeline executes one of the `test` using `pytest` and generates an `HTML report` saved in `jenkins_reports/test_reports.html`. Finally, it copies the generated test report to the user's desktop and cleans up by deleting the original report folder from the Jenkins workspace.
+
+### Jenkins Declarative Pipeline Code
 
 ```
 pipeline {
@@ -209,5 +206,5 @@ pipeline {
 
 ```
 
-## Jenkins Integration Video
-Here is a video that demonstrates how to integrate `Jenkins` with `GitHub` and run a Python project using Jenkins: Only one file is executed on this video i.e. `fb_embed_test.py`. [Watch the Video](https://drive.proton.me/urls/DCNSZJW420#jCU2TRaJqWMe)
+## Jenkins Build Video
+As for this Demo only test case file is executed on this video i.e. `fb_embed_test.py`. [Here](https://drive.proton.me/urls/DCNSZJW420#jCU2TRaJqWMe)
