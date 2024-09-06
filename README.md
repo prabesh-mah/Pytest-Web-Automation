@@ -83,7 +83,7 @@ venv\Scripts\activate
 deactivate
 ```
 
-**Step 8**: After activating the virtual environment, install the necessary requirements for this project.
+**Step 8**: After activating the virtual environment, install the necessary dependencies for this project.
 
 ```
 pip install -r requirements.txt --upgrade
@@ -100,22 +100,23 @@ pytest -m medium_priority
 pytest -m high_priority 
 ```
 
-**# 2**: To run all test methods and generate an `HTML report`.
+**# 2**: To run all test methods and generate an `HTML report` at the end. 
 
 ```
-pytest -vs --html='report.html' 
+pytest -vs --html='report.html' --self-contained-html 
 ```
 
 where, 
 - `-v` : verbose, provide more detailed output.
 - `-s`: stdout, allow print statement to be displayed.
-- `--html='report.html'`: This option generate an HTML report with file name report.html.
+- `--html='report.html'`: This option generate an HTML report with file name **report.html**.
+- `--self-contained-html`: Generates a single HTML file instead of HTML and CSS file separately.
 
 ## Full Code Execution Video
 Watch the full code execution video.
 [Here](https://drive.proton.me/urls/82HTY4XF5R#vRnv8rS7NldW)
 
-## Jenkins Declarative Pipeline
+## Integration with Jenkins via. Declarative Pipeline
 
 Wrote a `declarative Jenkins pipeline` that automates the process of cloning the `feature branch` from the `GitHub` repository `Pytest-Web-Automation`. The pipeline begins by creating a virtual environment named `venv` to isolate project dependencies, followed by activating the environment and installing the required Python packages from `requirements.txt`. It then confirms the installation of `Python, pip, git, and pytest` by checking their versions. After ensuring that all necessary tools are in place, the pipeline executes one of the `test` using `pytest` and generates an `HTML report` saved in `jenkins_reports/test_reports.html`. Finally, it copies the generated test report to the user's desktop and cleans up by deleting the original report folder from the Jenkins workspace.
 
@@ -206,5 +207,5 @@ pipeline {
 
 ```
 
-## Jenkins Build Video
+## Integration with Jenkins Video
 As for this Demo only one test case file is executed on this video i.e. `fb_embed_test.py`. [Here](https://drive.proton.me/urls/DCNSZJW420#jCU2TRaJqWMe)
