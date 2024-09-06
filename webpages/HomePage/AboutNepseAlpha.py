@@ -27,18 +27,21 @@ class AboutNepseAphaSection(BasePage):
             print(
                 f"The address matches the:\n{expected_address}")
         else:
-            print(f"The address does not match the:\n{expected_address}")
+            assert False, f"The address does not match the:\n{
+                expected_address}"
 
     def is_mobile_num_visible_and_correct(self):
         expected_contact = "+977-9813667733"
         if self.is_text_visible(AboutNepseAphaLocator.mobile_num, expected_contact):
             print(f"The mobile num matches the:\n{expected_contact}")
         else:
-            print(f"The mobile num does not match the:\n{expected_contact}")
+            assert False, f"The mobile num does not match the:\n{
+                expected_contact}"
 
     def is_landline_num_visible_and_correct(self):
         expected_contact = "01-5919211"
         if self.is_text_visible(AboutNepseAphaLocator.landline_num, expected_contact):
             print(f"The landline matches the:\n{expected_contact}")
         else:
-            print(f"The landline does not match the:\n{expected_contact}")
+            assert False, f"The landline does not match the:\n{
+                expected_contact}"
