@@ -15,20 +15,29 @@ class TestCopyright(BaseTest):
     def test_verify_copyright_text_and_symbol(self):
         copyright = CopyrightSection(self.driver)
 
-        expected_company_name = "Nepse Alpha Pvt Ltd."
-        expected_symbol = "©"
+        # expected_company_name = "Nepse Alpha Pvt Ltd."
+        # expected_symbol = "©"
 
-        company_name_matches = copyright.copyright_company_name_text(
-            expected_company_name)
-        symbol_matches = copyright.copyright_symbol(expected_symbol)
+        # company_name_matches = copyright.copyright_company_name_text(
+        #     expected_company_name)
+        # print(f"The copyright text matches the expected company name: {
+        #     expected_company_name}")
+        # assert company_name_matches, f"The copyright text does not match the expected company name: {
+        #     expected_company_name}"
 
-        if company_name_matches and symbol_matches:
-            print(f"The copyright text matches the:\n{expected_company_name}")
-            print(f"The copyright symbol matches the:\n{expected_symbol}")
+        # symbol_matches = copyright.copyright_symbol(expected_symbol)
+        # print(f"The copyright symbol matches the expected symbol: {
+        #     expected_symbol}")
+        # assert symbol_matches, f"The copyright symbol does not match the expected symbol: {
+        #     expected_symbol}"
+
+        expected_name = '© Copyright Nepse Alpha Pvt Ltd.'
+
+        copyright_text_matches = copyright.copyright_verfication(
+            expected_name)
+        if copyright_text_matches:
+            print(f"The copyright text matches the expected company name: {
+                expected_name}")
         else:
-            if not company_name_matches:
-                print(f"The copyright text does not match the:\n{
-                      expected_company_name}")
-            if not symbol_matches:
-                print(f"The copyright symbol does not match the:\n{
-                      expected_symbol}")
+            assert False, f"The copyright text does not match the expected company name: {
+                expected_name}"

@@ -8,8 +8,6 @@ class CopyrightSection(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def copyright_company_name_text(self, text):
-        return self.is_text_visible(CopyRightLocator.copyright_company_text, text)
+    def copyright_verfication(self, text):
+        return self.is_text_visible(CopyRightLocator.copyright_symbol_and_text, text)
 
-    def copyright_symbol(self, text):
-        return self.is_text_visible(CopyRightLocator.copyright_symbol, text)
