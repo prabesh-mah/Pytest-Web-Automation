@@ -31,10 +31,8 @@ class SearchBoxLocator:
 
 
 class CopyRightLocator:
-    copyright_company_text = (
-        By.XPATH, "//a[@title='Nepse Alpha' and contains(normalize-space(),'Nepse Alpha Pvt Ltd')]")
-    copyright_symbol = (
-        By.XPATH, "//div[@class='column column_2_3' and contains(normalize-space(),'Copyright')]")
+    copyright_symbol_and_text = (
+        By.XPATH, "//div[@class='column column_2_3' and contains(normalize-space(),'© Copyright') and  contains(normalize-space(),'Nepse Alpha Pvt Ltd.') ]")
 
 
 class HomepageLocator:
