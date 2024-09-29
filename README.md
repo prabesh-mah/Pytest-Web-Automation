@@ -23,7 +23,13 @@ Automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python w
 - `pytest-order` : It is a pytest plugin that allows you to customize the order in which your tests are run
 - `pytest-timeout` : It is a pytest plugin that interrupts and terminates tests that exceed a specified duration.
 - `@pytest.mark.smoke` : It is a custom marker used in the pytest framework for Python. 
-- `pandas`: It is used to efficiently scrape HTML tables from web pages and save the extracted data into Excel files using the to_excel() function. 
+- `pandas`: It is used to efficiently scrape HTML tables from web pages and save the extracted data into Excel files using 'to_excel()' function. 
+
+# Testing Objective
+- Automate the testing of the Nepse Alpha website to ensure functionality. 
+- Implement the Page Object Model (POM) design pattern for better maintainability.
+- Utilize pytest framework to identify and report bugs efficiently.
+
 
 # What are tested in this project
 
@@ -37,6 +43,28 @@ Automated the [Nepse Alpha](https://www.nepsealpha.com/) website using `Python w
 - Advertise with us section
 - Form fillup
 - etc
+
+# Test Deliverables
+- Test Cases and Scripts
+- Test Execution Report
+- Defect Reports
+
+# Tested Device
+- Windows 11 Home 23H2 (Build 22631.4249)
+- 16 GB RAM, AMD Ryzen 7 5800H
+- 200 Mbps Internet Connectivity
+
+# Software Version
+- Python 3.12.2
+- Selenium WebDriver 4.25.0
+- Pytest 8.0.1
+- pytest-timeout 2.3.1
+- pytest-order 1.2.0
+- pytest-html 4.1.1
+- undetected-chromedriver 3.5.5
+- Chrome 128.0.6613.85
+- Firefox 129.0.2
+- Edge 128.0.2739.42
 
 # How To Setup This Project
 
@@ -118,7 +146,9 @@ Watch the full code execution video.
 
 ## Integration with Jenkins via. Declarative Pipeline
 
-Wrote a `declarative Jenkins pipeline` that automates the process of cloning the `feature branch` from the `GitHub` repository `Pytest-Web-Automation`. The pipeline begins by creating a virtual environment named `venv` to isolate project dependencies, followed by activating the environment and installing the required Python packages from `requirements.txt`. It then confirms the installation of `Python, pip, git, and pytest` by checking their versions. After ensuring that all necessary tools are in place, the pipeline executes one of the `test` using `pytest` and generates an `HTML report` saved in `jenkins_reports/test_reports.html`. Finally, it copies the generated test report to the user's desktop and cleans up by deleting the original report folder from the Jenkins workspace.
+Wrote a `declarative Jenkins pipeline` that automates the process of cloning the `feature branch` from the `GitHub` repository `Pytest-Web-Automation`. The pipeline begins by creating a virtual environment named `venv` to isolate project dependencies, followed by activating the environment and installing the required Python packages from `requirements.txt`. It then confirms the installation of `Python, pip, git, and pytest` by checking their versions. 
+
+After ensuring that all necessary tools are in place, the pipeline executes one of the `test` using `pytest` and generates an `HTML report` saved in `jenkins_reports/test_reports.html`. Finally, it copies the generated test report to the user's desktop and cleans up by deleting the original report folder from the Jenkins workspace.
 
 ### Jenkins Declarative Pipeline Code
 
