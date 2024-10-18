@@ -114,7 +114,7 @@ deactivate
 **Step 8**: After activating the virtual environment, install the necessary dependencies for this project.
 
 ```
-pip install -r requirements.txt --upgrade
+pip install --no-cache-dir -r requirements.txt --upgrade
 ```
 
 # Usage
