@@ -16,22 +16,6 @@ def setup_and_teardown(request):
     baseURL = ReadConfig.read_configuration("config file", "base_url")
     browserType = ReadConfig.read_configuration("config file", "browser_type")
 
-    # Undetected Chrome Webdriver Options
-    chromium_options = uc.ChromeOptions()
-
-    extension_paths = [
-        "extensions/Buster",
-        "extensions/uBlock Origin"
-    ]
-    chromium_options.add_argument(
-        f"--load-extension={','.join(extension_paths)}")
-    chromium_options.add_argument(
-        "--disable-blink-features=AutomationControlled")
-    chromium_options.add_argument("--disable-gpu")
-    chromium_options.add_argument("--ignore-certificate-errors")
-    # chromium_options.add_argument("--headless")
-    chromium_options.add_argument("--disable-extensions")
-
     # Access Browserstack token key from environment variable
     browserstack_token = os.getenv('browserstack_token')
 
@@ -39,11 +23,11 @@ def setup_and_teardown(request):
     driver = None
 
     if browserType == "chrome":
-        driver = uc.Chrome(options=chromium_options)
+        driver = uc.Chrome()
     elif browserType == "firefox":
         driver = webdriver.Firefox()
     elif browserType == "edge":
-        driver = webdriver.Edge(options=chromium_options)
+        driver = webdriver.Edge()
     elif browserType == "safari":
         safari_options = webdriver.SafariOptions()
         capabilities = {
