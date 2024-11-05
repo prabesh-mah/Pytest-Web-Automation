@@ -9,6 +9,9 @@ class ThemeLocators:
     light_dark_toggle = (By.XPATH, "//a[@id='lightDarkToogle']")
     body = (By.TAG_NAME, "body")
 
+    # New Locators
+    togggle_theme = (By.XPATH, "//li[@role='button']")
+
 
 class ThemeSection(BasePage):
     def __init__(self, driver):
@@ -22,3 +25,6 @@ class ThemeSection(BasePage):
 
     def click_toggle_theme(self):
         self.click(ThemeLocators.light_dark_toggle)
+
+    def click_toggle_theme_new(self):
+        self.click(ThemeLocators.togggle_theme)

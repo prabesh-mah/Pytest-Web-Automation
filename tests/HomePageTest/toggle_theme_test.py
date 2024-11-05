@@ -15,9 +15,24 @@ class TestToggleTheme(BaseTest):
     def test_toggle_theme_between_light_and_dark_mode(self):
         toggle_theme = ThemeSection(self.driver)
 
+        # def toggle_theme_and_verify(expected_theme):
+        #     toggle_theme.click_more_tools()
+        #     toggle_theme.click_toggle_theme()
+        #     body_classes = toggle_theme.get_attribute(
+        #         ThemeLocators.body, 'class')
+        #     assert expected_theme in body_classes, f"Expected theme '{
+        #         expected_theme}' not found."
+
+        # toggle_theme_and_verify('dark-nepse')
+        # self.driver.refresh()
+        # toggle_theme_and_verify('light-nepse')
+
+        # time.sleep(2)
+
+        # New Locatoor Code
+
         def toggle_theme_and_verify(expected_theme):
-            toggle_theme.click_more_tools()
-            toggle_theme.click_toggle_theme()
+            toggle_theme.click_toggle_theme_new()
             body_classes = toggle_theme.get_attribute(
                 ThemeLocators.body, 'class')
             assert expected_theme in body_classes, f"Expected theme '{

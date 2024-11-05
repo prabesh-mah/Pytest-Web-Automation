@@ -16,3 +16,4 @@ class TestToggleTheme(BaseTest):
     def test_all_footer_links_verification(self):
         footer_links = FooterLinkSection(self.driver)
         footer_links.verify_all_footer_links()
+ 

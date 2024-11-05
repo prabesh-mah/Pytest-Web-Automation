@@ -15,7 +15,7 @@ class TestFacebookEmbed(BaseTest):
     def test_facebook_embed_visibility_and_interactivity_on_homepage(self):
         fb_embed = FacebookEmbedSection(self.driver)
         main_tab = self.driver.current_window_handle  # save baseurl
-        self.driver.execute_script("window.scrollBy(0, 6500);")
+        self.driver.execute_script("window.scrollBy(0, 7800);")
         fb_embed.check_and_switch_to_frame()
         fb_embed.click_facebook_link_inside_iframe()
         fb_tab = self.driver.window_handles[1]

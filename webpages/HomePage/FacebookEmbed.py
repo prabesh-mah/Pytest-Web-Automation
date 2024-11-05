@@ -7,7 +7,8 @@ import time
 class FacebookEmbedLocator:
     iframe = (
         By.XPATH, "//iframe[@title='fb:page Facebook Social Plugin']")
-    fb_page_link_inside_iframe = (By.XPATH, "//a[text()='NEPSE ALPHA']")
+    fb_page_link_inside_iframe = (
+        By.XPATH, "//a[normalize-space()='NEPSE ALPHA']")
     close_button = (By.XPATH, "//div[@aria-label='Close']")
     element_to_move = (
         By.XPATH, "//h4[@class='box_header' and contains(text(),'Nepse Alpha Facebook Page')]")
@@ -28,3 +29,4 @@ class FacebookEmbedSection(BasePage):
 
     def homepage_element_is_present(self):
         self.check_element(HomepageLocator.nepse_alpha_fb_page)
+

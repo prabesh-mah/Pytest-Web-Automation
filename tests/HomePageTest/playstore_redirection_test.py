@@ -18,7 +18,17 @@ class TestPlaystoreRedirection(BaseTest):
         playstore.click_playstore_icon()
         playstore_tab = self.driver.window_handles[1]  # save playstore page
         self.driver.switch_to.window(playstore_tab)
-        time.sleep(2)
-        playstore.visibility_of_error_text_on_playstore()
+
+        expected_name = 'Nepsealpha NEPSE app Portfolio'
+
+        playstore_text_matches = playstore.playstore_verfication(
+            expected_name)
+        if playstore_text_matches:
+            print(f"Redirects to Nepsealpha Playstore Page: {
+                expected_name}")
+        else:
+            assert False, f"Failed to Redirect to Nepsealpha Playstore Page: {
+                expected_name}"
+
         self.driver.close()
         self.driver.switch_to.window(main_tab)

@@ -7,6 +7,10 @@ class PlaystoreLocator:
     error_text = (
         By.XPATH, "//div[@id='error-section' and contains(text(),'requested URL was not found on this server')]")
 
+    # New Update
+    playstore_text = (
+        By.XPATH, "//span[contains(text(),'Nepsealpha NEPSE app Portfolio')]")
+
 
 class PlaystoreSection(BasePage):
     def __init__(self, driver):
@@ -15,15 +19,20 @@ class PlaystoreSection(BasePage):
     def click_playstore_icon(self):
         self.click(PlaystoreLocator.playstore_download_icon)
 
-    def visibility_of_error_text_on_playstore(self):
-        self.check_element(PlaystoreLocator.error_text)
+    # def visibility_of_error_text_on_playstore(self):
+    #     self.check_element(PlaystoreLocator.error_text)
 
-        expected_text = "We're sorry, the requested URL was not found on this server."
+    #     expected_text = "We're sorry, the requested URL was not found on this server."
 
-        if self.is_text_visible(PlaystoreLocator.error_text, expected_text):
+    #     if self.is_text_visible(PlaystoreLocator.error_text, expected_text):
 
-            print(f"PASSED! The visibility of text matches the: {
-                  expected_text}")
-        else:
-            print(f"FAILED! The visibility of text does not matches the: {
-                  expected_text}")
+    #         print(f"PASSED! The visibility of text matches the: {
+    #               expected_text}")
+    #     else:
+    #         print(f"FAILED! The visibility of text does not matches the: {
+    #               expected_text}")
+
+    # New Update
+
+    def playstore_verfication(self, text):
+        return self.is_text_visible(PlaystoreLocator.playstore_text, text)

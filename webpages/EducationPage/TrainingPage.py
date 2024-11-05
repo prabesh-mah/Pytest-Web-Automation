@@ -108,6 +108,3 @@ class TrainingPage(BasePage):
 
     def click_ok_on_success_box(self):
         self.click(TrainingLocator.ok_button)
-
-    def click_ok_on_success_box(self):
-        self.click(TrainingLocator.ok_button)
