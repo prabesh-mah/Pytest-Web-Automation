@@ -8,8 +8,6 @@ class ThemeLocators:
         By.XPATH, "//button[@class='btn btn-white btn-ouline-dark btn-sm dropdown-toggle']")
     light_dark_toggle = (By.XPATH, "//a[@id='lightDarkToogle']")
     body = (By.TAG_NAME, "body")
-
-    # New Locators
     togggle_theme = (By.XPATH, "//li[@role='button']")
 
 
