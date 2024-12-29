@@ -15,5 +15,5 @@ class TestToggleTheme(BaseTest):
     @pytest.mark.high_priority
     def test_all_footer_links_verification(self):
         footer_links = FooterLinkSection(self.driver)
-        footer_links.verify_all_footer_links()
+        footer_links.validate_footer_links()
  
