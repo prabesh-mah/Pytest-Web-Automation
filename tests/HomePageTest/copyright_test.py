@@ -1,13 +1,11 @@
 from webpages.HomePage.CopyRight import CopyrightSection
-from webpages.BasePage import BasePage
-from tests.base_test import BaseTest
 import pytest
 import time
 
 
 @pytest.mark.smoke
 @pytest.mark.regression
-class TestCopyrightLink(BaseTest):
+class TestCopyrightLink:
 
     @pytest.mark.order(21)
     @pytest.mark.timeout(30)

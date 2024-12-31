@@ -1,16 +1,16 @@
 from webpages.HomePage.APkDownload import APKDownloadSection
-from tests.base_test import BaseTest
 import pytest
 import time
 
 
 @pytest.mark.smoke
 @pytest.mark.regression
-class TestAPKDownloadRedirection(BaseTest):
+class TestAPKDownloadRedirection:
 
     @pytest.mark.order(22)
     @pytest.mark.timeout(60)
     @pytest.mark.medium_priority
+    @pytest.mark.skip(reason="The apk download section has been removed")
     def test_apk_download(self):
         apk_download = APKDownloadSection(self.driver)
         main_tab = self.driver.current_window_handle  # save current window

@@ -1,12 +1,10 @@
 from webpages.HomePage.AboutNepseAlpha import AboutNepseAphaSection
-from webpages.BasePage import BasePage
-from tests.base_test import BaseTest
 import pytest
 
 
 @pytest.mark.smoke
 @pytest.mark.regression
-class TestFooterLinks(BaseTest):
+class TestFooterLinks:
 
     @pytest.mark.order(13)
     @pytest.mark.timeout(30)

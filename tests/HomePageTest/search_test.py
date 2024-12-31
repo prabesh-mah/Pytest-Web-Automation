@@ -1,12 +1,10 @@
 from selenium.webdriver.common.keys import Keys
 from webpages.HomePage.Search import SearchBox
-from webpages.BasePage import BasePage
-from tests.base_test import BaseTest
 import pytest
 import time
 
 
-class TestSearchBox(BaseTest):
+class TestSearchBox:
 
     @pytest.mark.order(3)
     @pytest.mark.timeout(30)

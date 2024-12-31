@@ -1,6 +1,4 @@
 from webpages.HomePage.GetInTouchWithUs import GetInTouchWithUsSection
-from webpages.BasePage import BasePage
-from tests.base_test import BaseTest
 import pytest
 import time
 
@@ -9,7 +7,7 @@ import time
 @pytest.mark.regression
 @pytest.mark.timeout(70)
 @pytest.mark.medium_priority
-class TestGetInTouchWithUs(BaseTest):
+class TestGetInTouchWithUs:
 
     @pytest.mark.order(14)
     @pytest.mark.xfail(reason="validated with url which might fail as it can changes quickly")

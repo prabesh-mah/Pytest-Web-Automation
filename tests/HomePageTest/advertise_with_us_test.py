@@ -1,6 +1,4 @@
 from webpages.HomePage.AdvertiseWithUs import AdvertiseWithUsSection
-from webpages.BasePage import BasePage
-from tests.base_test import BaseTest
 import pytest
 import time
 
@@ -8,7 +6,7 @@ import time
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.high_priority
-class TestFooterLinks(BaseTest):
+class TestFooterLinks:
 
     @pytest.mark.order(17)
     @pytest.mark.timeout(60)

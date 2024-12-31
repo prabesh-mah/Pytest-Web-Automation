@@ -7,7 +7,6 @@ from selenium.webdriver.support import expected_conditions as EC
 import pytest
 import os
 
-
 # Create a remote Safari WebDriver instance for BrowserStack.
 def create_remote_safari_driver(browserstack_token):
     capabilities = {
@@ -53,7 +52,7 @@ def wait_for_homepage_element():
     assert "nepsealpha" in driver.current_url, "Homepage did not load correctly."
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function", autouse=True)
 def setup_and_teardown(request):
 
     global driver

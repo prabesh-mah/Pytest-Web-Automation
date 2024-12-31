@@ -1,6 +1,4 @@
 from webpages.PremiumPage.PremiumPage import PremiumPage
-from webpages.BasePage import BasePage
-from tests.base_test import BaseTest
 import pytest
 import time
 
@@ -8,7 +6,7 @@ import time
 @pytest.mark.smoke
 @pytest.mark.regression
 @pytest.mark.medium_priority
-class TestPremiumPage(BaseTest):
+class TestPremiumPage:
 
     @pytest.mark.order(23)
     def test_verify_khalti_button_redirects_to_khalti_page(self):

@@ -1,13 +1,11 @@
 from webpages.EducationPage.TrainingPage import TrainingPage
-from webpages.BasePage import BasePage
-from tests.base_test import BaseTest
 import pytest
 import time
 
 
 @pytest.mark.regression
 @pytest.mark.high_priority
-class TestContactUs(BaseTest):
+class TestContactUs:
 
     def click_education_and_scroll_to_contact_us(self):
         contact_us = TrainingPage(self.driver)
@@ -15,7 +13,6 @@ class TestContactUs(BaseTest):
         contact_us.click_training()
         contact_us.check_contact_form_container()
         contact_us.scroll_using_js(900)
-        time.sleep(1)
 
     @pytest.mark.order(26)
     @pytest.mark.timeout(30)
@@ -29,9 +26,9 @@ class TestContactUs(BaseTest):
         contact_us.click_subject()
         contact_us.click_message()
         contact_us.scroll_using_js(100)
-        time.sleep(1)
         contact_us.click_send_message_button()
-        contact_us.visibility_of_success_box_for_invalid_case()
+        contact_us.error_message()
+        # contact_us.visibility_of_success_box_for_invalid_case()
 
     @pytest.mark.order(27)
     @pytest.mark.timeout(50)
@@ -45,7 +42,6 @@ class TestContactUs(BaseTest):
         contact_us.enter_subject("")
         contact_us.enter_message("This is demo message")
         contact_us.scroll_using_js(100)
-        time.sleep(1)
         contact_us.click_send_message_button()
         contact_us.visibility_of_success_box_for_invalid_case()
 
@@ -55,7 +51,6 @@ class TestContactUs(BaseTest):
     def test_validate_form_fillup_by_clicking_send_button_multiple_times(self):
         self.click_education_and_scroll_to_contact_us()
         contact_us = TrainingPage(self.driver)
-        time.sleep(1)
         for i in range(5):
             contact_us.click_send_message_button()
         contact_us.visibility_of_success_box_for_invalid_case()
@@ -63,14 +58,12 @@ class TestContactUs(BaseTest):
     def fillup_form_and_submit_with_valid_details(self):
         self.click_education_and_scroll_to_contact_us()
         contact_us = TrainingPage(self.driver)
-        time.sleep(1)
         contact_us.enter_name("Wicked Man")
         contact_us.enter_phone_number("9849984998")
         contact_us.enter_email("nepsealpha_test@mailto.plus")
         contact_us.enter_subject("demo mail")
         contact_us.enter_message("This is demo mail description")
         contact_us.scroll_using_js(100)
-        time.sleep(1)
         contact_us.click_send_message_button()
 
     @pytest.mark.order(29)
@@ -86,7 +79,6 @@ class TestContactUs(BaseTest):
     @pytest.mark.medium_priority
     def test_validate_reappeaing_of_success_dialog_box(self):
         self.fillup_form_and_submit_with_valid_details()
-        time.sleep(1)
         contact_us = TrainingPage(self.driver)
         contact_us.click_ok_on_success_box()
         contact_us.click_premium_button()

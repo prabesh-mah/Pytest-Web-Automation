@@ -108,3 +108,11 @@ class TrainingPage(BasePage):
 
     def click_ok_on_success_box(self):
         self.click(TrainingLocator.ok_button)
+
+    def error_message(self, text):
+        expected_text = 'Please fill in this field.'
+        if self.is_logo_visible(TrainingLocator.name, expected_text):
+            print(f"Error message matches the:\n{expected_text}")
+        else:
+            assert False, f"Error message doesn't matches the:\n{
+                expected_text}"

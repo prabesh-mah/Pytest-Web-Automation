@@ -1,13 +1,11 @@
 from webpages.HomePage.FacebookEmbed import FacebookEmbedSection
-from webpages.BasePage import BasePage
-from tests.base_test import BaseTest
 import pytest
 import time
 
 
 @pytest.mark.smoke
 @pytest.mark.regression
-class TestFacebookEmbed(BaseTest):
+class TestFacebookEmbed:
 
     @pytest.mark.order(19)
     @pytest.mark.timeout(50)
@@ -15,7 +13,7 @@ class TestFacebookEmbed(BaseTest):
     def test_facebook_embed_visibility_and_interactivity_on_homepage(self):
         fb_embed = FacebookEmbedSection(self.driver)
         main_tab = self.driver.current_window_handle  # save baseurl
-        self.driver.execute_script("window.scrollBy(0, 7800);")
+        self.driver.execute_script("window.scrollBy(0, 7000);")
         fb_embed.check_and_switch_to_frame()
         fb_embed.click_facebook_link_inside_iframe()
         fb_tab = self.driver.window_handles[1]

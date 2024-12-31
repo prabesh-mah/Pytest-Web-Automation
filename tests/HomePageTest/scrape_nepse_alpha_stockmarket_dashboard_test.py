@@ -1,9 +1,8 @@
 from webpages.HomePage.NepseAlphaStockMarketDashboard import ScrapeNepseStockMarketDashboard
-from tests.base_test import BaseTest
 import pytest
 
 
-class TestNepseDashboardScrapping(BaseTest):
+class TestNepseDashboardScrapping:
 
     @pytest.mark.order(31)
     @pytest.mark.timeout(30)
