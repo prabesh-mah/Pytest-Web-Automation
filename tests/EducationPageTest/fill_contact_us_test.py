@@ -72,7 +72,7 @@ class TestContactUs:
         contact_us.scroll_using_js(100)
         contact_us.click_send_message_button()
 
-    @pytest.mark.order(32)
+    @pytest.mark.order(31)
     @pytest.mark.timeout(50)
     @pytest.mark.medium_priority
     def test_validate_reappeaing_of_success_dialog_box(self):
