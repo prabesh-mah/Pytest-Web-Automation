@@ -74,7 +74,7 @@ class TrainingPage(BasePage):
     def click_send_message_button(self):
         self.click(TrainingLocator.send_message_button)
 
-    def visibility_of_success_box_for_valid_case(self):
+    def visibility_of_success_box(self):
         self.check_element(TrainingLocator.success_box)
 
         text = "Thank You for your request, We will be In contact with you ASAP"
@@ -84,13 +84,11 @@ class TrainingPage(BasePage):
 
         if self.is_text_visible(
                 TrainingLocator.success_box_text, text):
-            print(f"Visible of success box : {visible_text}")
             assert True
         else:
-            print(f"Visible of success box : {visible_text}")
             assert False
 
-    def visibility_of_success_box_for_invalid_case(self):
+    def invisibility_of_success_box(self):
         self.check_element(TrainingLocator.success_box)
 
         text = "Thank You for your request, We will be In contact with you ASAP"
@@ -100,19 +98,9 @@ class TrainingPage(BasePage):
 
         if self.is_text_visible(
                 TrainingLocator.success_box_text, text):
-            print(f"Visible of success box : {visible_text}")
             assert False
         else:
-            print(f"Visible of success box : {visible_text}")
             assert True
 
     def click_ok_on_success_box(self):
         self.click(TrainingLocator.ok_button)
-
-    def error_message(self, text):
-        expected_text = 'Please fill in this field.'
-        if self.is_logo_visible(TrainingLocator.name, expected_text):
-            print(f"Error message matches the:\n{expected_text}")
-        else:
-            assert False, f"Error message doesn't matches the:\n{
-                expected_text}"
