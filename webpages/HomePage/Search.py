@@ -8,21 +8,17 @@ class SearchBoxLocators:
     not_found_404 = (By.XPATH, "//h1[normalize-space()='404']")
 
     # Search Term to Print Length of Child Elements
-    search_asian = (
-        By.XPATH, "//div[@class='autocomplete-items']")
+    search_asian = (By.XPATH, "//div[@class='autocomplete-items']")
 
     # Autosuggestion Items
     autosuggestion_item_ahl = (By.XPATH, "//div[text()='(AHL) Asia']")
-    autosuggestion_item_nica = (
-        By.XPATH, "//div[contains(@class, '-list') and contains(normalize-space(),'(NICA) NIC') and contains(normalize-space(),'Bank Ltd.')]")
-    autosuggestion_item_nepse = (
-        By.XPATH, "//div[contains(@class,'-list')]/b[text()='NEPSE']")
+    autosuggestion_item_nica = (By.XPATH, "//div[contains(@class, '-list') and contains(normalize-space(),'(NICA) NIC') and contains(normalize-space(),'Bank Ltd.')]")
+    autosuggestion_item_nepse = (By.XPATH, "//div[contains(@class,'-list')]/b[text()='NEPSE']")
     autosuggestion_item_lbbl_debenture_2089 = (
         By.XPATH, "//div[contains(@class, '-list') and contains(normalize-space(),'LBBL Debenture 2089')]")
 
     # Redirection Pages
-    ahl_page_element = (
-        By.XPATH, "//h4[normalize-space()='Asian Hydropower Limited']")
+    ahl_page_element = (By.XPATH, "//h4[normalize-space()='Asian Hydropower Limited']")
 
 
 class SearchBox(BasePage):

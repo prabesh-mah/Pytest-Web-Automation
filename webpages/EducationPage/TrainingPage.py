@@ -5,10 +5,8 @@ import time
 
 
 class TrainingLocator(BasePage):
-    education = (
-        By.XPATH, "//ul[@class='sf-menu']/descendant::a[@title='Education']")
-    training = (
-        By.XPATH, "//ul[@class='sf-menu']/descendant::a[@title='Training']")
+    education = (By.XPATH, "//ul[@class='sf-menu']/descendant::a[@title='Education']")
+    training = (By.XPATH, "//ul[@class='sf-menu']/descendant::a[@title='Training']")
     contact_form_container = (By.XPATH, "//form[@id='contact_form']")
     name = (By.XPATH, "//input[contains(@placeholder,'Name')]")
     phone_number = (By.XPATH, "//input[contains(@placeholder,'Phone')]")
@@ -16,12 +14,9 @@ class TrainingLocator(BasePage):
     subject = (By.XPATH, "//input[contains(@placeholder,'Subject')]")
     message = (By.XPATH, "//textarea[contains(@placeholder,'Message')]")
     send_message_button = (By.XPATH, "//input[@name = 'submit']")
-    success_box = (
-        By.CSS_SELECTOR, "div[role='dialog'][aria-labelledby='swal2-title']")
-    success_box_text = (
-        By.XPATH, "//h2[text()='Thank You for your request, We will be In contact with you ASAP']")
-    ok_button = (
-        By.XPATH, "//button[@type='button' and contains(text(),'OK')]")
+    success_box = (By.CSS_SELECTOR, "div[role='dialog'][aria-labelledby='swal2-title']")
+    success_box_text = (By.XPATH, "//h2[text()='Thank You for your request, We will be In contact with you ASAP']")
+    ok_button = (By.XPATH, "//button[@type='button' and contains(text(),'OK')]")
 
 
 class TrainingPage(BasePage):
@@ -47,14 +42,25 @@ class TrainingPage(BasePage):
     def click_name(self):
         self.click(TrainingLocator.name)
 
-    def enter_phone_number(self, contactNumber):
+    def __fill_phone_number(self, contactNumber): 
+        """ Private method to enter phone number """
         self.type(TrainingLocator.phone_number, contactNumber)
+
+    def enter_phone_number(self, contact_number):
+        """Public method to enter a phone number into the form """
+        self.__fill_phone_number(contact_number)
 
     def click_phone_number(self):
         self.click(TrainingLocator.phone_number)
 
-    def enter_email(self, emailAddress):
+    def __fill_email(self, emailAddress):
+        """ Private method to enter email """
         self.type(TrainingLocator.email, emailAddress)
+
+    def enter_email(self, email):
+        """Public method to enter an email into the form """
+        self.__fill_email(email)
+
 
     def click_email(self):
         self.click(TrainingLocator.email)
@@ -104,3 +110,7 @@ class TrainingPage(BasePage):
 
     def click_ok_on_success_box(self):
         self.click(TrainingLocator.ok_button)
+
+
+
+    

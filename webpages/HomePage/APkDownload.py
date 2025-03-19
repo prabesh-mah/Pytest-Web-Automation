@@ -7,10 +7,8 @@ import os
 class APKDownloadLocator:
     apk_download_icon = (
         By.CSS_SELECTOR, "img[src='/images/direct-download.png']")
-    gdrive_element = (
-        By.XPATH, "//div[@data-tooltip-unhoverable='true'][normalize-space()='Nepsealpha_V1.0.1.apk']")
-    gdrive_download_icon = (
-        By.XPATH, "//body/div[@aria-label='दर्शक देखाउँदै।']/div[@role='toolbar']/div/div/div/div/div[@aria-label='डाउनलोड गर्नुहोस्']/div[1]")
+    gdrive_element = (By.XPATH, "//div[@data-tooltip-unhoverable='true'][normalize-space()='Nepsealpha_V1.0.1.apk']")
+    gdrive_download_icon = (By.XPATH, "//body/div[@aria-label='दर्शक देखाउँदै।']/div[@role='toolbar']/div/div/div/div/div[@aria-label='डाउनलोड गर्नुहोस्']/div[1]")
     download_element = (By.XPATH, "//input[@id='uc-download-link']")
     download_icon = (By.XPATH, "//input[@id='uc-download-link']")
 

@@ -4,12 +4,10 @@ from selenium.webdriver.common.by import By
 
 class PlaystoreLocator:
     playstore_download_icon = (By.XPATH, "//img[@src='/images/android.png']")
-    error_text = (
-        By.XPATH, "//div[@id='error-section' and contains(text(),'requested URL was not found on this server')]")
+    error_text = (By.XPATH, "//div[@id='error-section' and contains(text(),'requested URL was not found on this server')]")
 
     # New Update
-    playstore_text = (
-        By.XPATH, "//span[contains(text(),'Nepsealpha NEPSE app Portfolio')]")
+    playstore_text = (By.XPATH, "//span[contains(text(),'Nepsealpha NEPSE app Portfolio')]")
 
 
 class PlaystoreSection(BasePage):

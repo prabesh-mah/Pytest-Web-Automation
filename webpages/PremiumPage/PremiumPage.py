@@ -9,8 +9,7 @@ class PremiumPageLocators:
     element = (By.XPATH, "//h2[normalize-space()='Our Payment Vendors']")
     khalti_button = (By.XPATH, "//button[normalize-space()='Khalti']")
     esewa_button = (By.XPATH, "//button[normalize-space()='eSewa']")
-    connect_ips_button = (
-        By.XPATH, "//button[normalize-space()='Connect IPS']")
+    connect_ips_button = (By.XPATH, "//button[normalize-space()='Connect IPS']")
 
 
 class PremiumPage(BasePage):

@@ -4,8 +4,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 
 class ThemeLocators:
-    more_tools = (
-        By.XPATH, "//button[@class='btn btn-white btn-ouline-dark btn-sm dropdown-toggle']")
+    more_tools = (By.XPATH, "//button[@class='btn btn-white btn-ouline-dark btn-sm dropdown-toggle']")
     light_dark_toggle = (By.XPATH, "//a[@id='lightDarkToogle']")
     body = (By.TAG_NAME, "body")
     togggle_theme = (By.XPATH, "//li[@role='button']")
