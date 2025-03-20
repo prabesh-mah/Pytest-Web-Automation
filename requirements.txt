@@ -10,5 +10,3 @@ pytest-xdist
 pytest-cov
 pytest-sugar
 pandas
-
-
